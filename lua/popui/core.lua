@@ -320,6 +320,7 @@ function Core:closeActivePopup()
 
     self.activeTitleWindowId = nil
     self.activeTitleBufferNumber = nil
+    vim.cmd("stopinsert!")
 end
 
 function Core:highlightPopupEntries(windowType, popupBufferNumber, entries)
