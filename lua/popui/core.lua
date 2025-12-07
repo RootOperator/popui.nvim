@@ -220,7 +220,7 @@ function Core:setupSpecificKeymaps(
 
     if windowType == self.WindowTypes.MarksManager then
         local removeMark = function(_, lineContent)
-            vim.api.nvim_del_mark(vim.split(lineContent, "\t")[1])
+            vim.api.nvim_del_mark(vim.split(lineContent, " ")[1])
 
             vim.cmd("wviminfo!")
             vim.cmd("wshada!")
@@ -531,7 +531,7 @@ function Core:formatEntries(windowType, entries, formatter)
                 table.insert(
                     results,
                     markSign
-                        .. "\t"
+                        .. " "
                         .. pathSegments[#pathSegments - 1]
                         .. "/"
                         .. pathSegments[#pathSegments]
@@ -566,7 +566,7 @@ function Core:formatEntries(windowType, entries, formatter)
             table.insert(
                 results,
                 coordinates
-                    .. "\t"
+                    .. " "
                     .. pathSegments[#pathSegments - 1]
                     .. "/"
                     .. pathSegments[#pathSegments]
